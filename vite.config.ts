@@ -4,7 +4,6 @@ import environment from "vite-plugin-environment";
 import viteReact from "@vitejs/plugin-react";
 import path from "path"
 
-dotenv.config({ path: ".env.basic-eth" });
 dotenv.config({ path: ".env" });
 
 process.env.II_URL =
@@ -12,7 +11,6 @@ process.env.II_URL =
     ? `http://${process.env.CANISTER_ID_INTERNET_IDENTITY}.localhost:4943`
     : `https://identity.ic0.app`;
 
-console.log(process.env.II_URL);
 
 export default defineConfig({
   build: {
