@@ -11,8 +11,8 @@ export default function Wallet() {
       <h3>Wallet</h3>
       <Logout />
     </div>
-    <div>ETH: <EthAddress /></div>
-    <div>ICP: <IcpAddress /></div>
+    <div className="flex items-center gap-2">ETH:<EthAddress /></div>
+    <div className="flex items-center gap-2">ICP:<IcpAddress /></div>
     <Balance />
     <div className="flex gap-5">
       <ReceiveButton />

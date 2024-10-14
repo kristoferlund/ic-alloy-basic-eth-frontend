@@ -5,7 +5,7 @@ export function IcpAddress() {
   const { identity } = useInternetIdentity();
 
   if (!identity) {
-    return <Skeleton className="w-full h-10" />
+    return <Skeleton className="h-[19px] w-[125px] inline-block" />
   }
 
   const principal = identity.getPrincipal().toString();
