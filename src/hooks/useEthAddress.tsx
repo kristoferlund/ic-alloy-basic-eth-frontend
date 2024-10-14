@@ -6,7 +6,21 @@ export default function useEthAddress(principal?: Principal) {
   const { actor: basic_eth } = useActor();
   return useQuery({
     queryKey: ['address', principal],
-    queryFn: () => basic_eth?.get_address(principal ? [principal] : []),
+    queryFn: async () => {
+      try {
+        const result = await basic_eth?.get_address(principal ? [principal] : []);
+        if (result === undefined) {
+          throw new Error("Undefined address returned.")
+        }
+        if ('Err' in result) {
+          throw new Error(result.Err);
+        }
+        return result.Ok;
+      } catch (e) {
+        console.log(e)
+        throw new Error("Invalid address returned.")
+      }
+    },
     enabled: !!basic_eth
   })
 

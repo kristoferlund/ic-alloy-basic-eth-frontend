@@ -56,7 +56,7 @@ export default function SendButton() {
         }
         {sendResult &&
           <pre className="bg-muted text-xs rounded-lg p-2 whitespace-pre-wrap break-all break-words box-border overflow-x-auto text-left">
-            {sendResult}
+            {JSON.stringify(sendResult)}
           </pre>
         }
       </form>

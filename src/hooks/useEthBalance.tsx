@@ -7,17 +7,20 @@ export default function useEthBalance(principal?: Principal) {
   return useQuery({
     queryKey: ['balance', principal],
     queryFn: async () => {
-      const balance = await basic_eth?.get_balance(principal ? [principal] : []);
+      const result = await basic_eth?.get_balance(principal ? [principal] : []);
       try {
-        if (balance === undefined) {
+        if (result === undefined) {
           throw new Error("Undefined balance returned.")
         }
-        BigInt(balance)
+        if ('Err' in result) {
+          throw new Error(result.Err);
+        }
+        BigInt(result.Ok)
+        return result.Ok
       } catch (e) {
         console.log(e)
         throw new Error("Invalid balance returned.")
       }
-      return balance;
     },
     enabled: !!basic_eth
   })
