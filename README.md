@@ -1,53 +1,41 @@
-# React + TypeScript + Vite
+# ic-alloy-basic-eth-frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React/Vite frontend for the multi user wallet example [ic-alloy-basic-eth](https://github.com/kristoferlund/ic-alloy-basic-eth).
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pre-requisites:
 
-## Expanding the ESLint configuration
+1. Deploy the `ic-alloy-basic-eth` smart contract canister
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Fork the [ic-alloy-basic-eth](https://github.com/kristoferlund/ic-alloy-basic-eth) repository.
+- Start `dfx` and deploy contract according to instructions in that repository
 
-- Configure the top-level `parserOptions` property like this:
+2. Copy `.env` from `basic-eth` to the root of this repository
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+- Rename the file `.env.basic-eth`
+- This information is required for the frontend to find the smart contract
+
+Run:
+
+```bash
+dfx start --background
+dfx deploy
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Author
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+- [kristofer@kristoferlund.se](mailto:kristofer@kristoferlund.se)
+- Twitter: [@kristoferlund](https://twitter.com/kristoferlund)
+- Discord: kristoferkristofer
+- Telegram: [@kristoferkristofer](https://t.me/kristoferkristofer)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
-```
+## License
 
-1. Deploy ic-alloy-basic-eth
-2. Copy .env to .env.basic-eth
+This project is licensed under the MIT License. See the LICENSE file for more
+details.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request if you
+have any suggestions or improvements.
