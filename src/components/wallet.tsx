@@ -1,21 +1,18 @@
-import { useInternetIdentity } from "ic-use-internet-identity";
 import ReceiveButton from "./receive-button";
 import SendButton from "./send-button";
-import { Address } from "./address";
+import { EthAddress } from "./eth-address";
 import { Balance } from "./balance";
 import Logout from "./logout";
+import { IcpAddress } from "./icp-address";
 
 export default function Wallet() {
-  const { identity } = useInternetIdentity();
-
-  if (!identity) return null;
-
   return <section className="flex flex-col gap-5">
     <div className="flex justify-between items-center">
       <h3>Wallet</h3>
       <Logout />
     </div>
-    <Address />
+    <div>ETH: <EthAddress /></div>
+    <div>ICP: <IcpAddress /></div>
     <Balance />
     <div className="flex gap-5">
       <ReceiveButton />
