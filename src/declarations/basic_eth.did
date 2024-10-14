@@ -1,0 +1,8 @@
+// Base unit of ETH, i.e., 1 ETH = 10^18 Wei.
+type Wei = nat;
+
+service : {
+  get_address : (owner: opt principal) -> (text);
+  get_balance : (owner: opt principal) -> (text);
+  send_eth : (to: text, amount: Wei) -> (text);
+}
