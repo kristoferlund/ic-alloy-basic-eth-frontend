@@ -48,11 +48,11 @@
 }
 
 main {
-  @apply bg-background h-screen pt-20
+  @apply bg-background h-screen pt-20 flex items-center justify-center;
 }
 
 section {
-  @apply w-[400px] m-auto p-5 border rounded-lg bg-card text-card-foreground shadow-sm
+  @apply w-[400px] p-5 border rounded-lg bg-card text-card-foreground shadow-sm;
 }
 
 h3 {
