@@ -6,7 +6,17 @@ import { InternetIdentityProvider } from 'ic-use-internet-identity'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Actors from './actor.tsx'
 
-const queryClient = new QueryClient()
+// Mimimize reloading of queries
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retryOnMount: false,
+      retry: false,
+      gcTime: Infinity,
+      staleTime: Infinity
+    }
+  }
+});
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
