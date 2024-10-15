@@ -12,16 +12,25 @@ import useEthAddress from "@/hooks/useEthAddress";
 import { useMutation } from "@tanstack/react-query";
 import { useActor } from "@/actor";
 import { decimalStringToEth } from "@/lib/eth";
+import useHandleAgentError from "@/hooks/useHandleAgentError";
 
 export default function SendButton() {
   const { isPending: isFetchingAddress } = useEthAddress();
   const { actor: basic_eth } = useActor();
-  const { mutate: sendEth, isPending: isSending, isError, error, data: sendResult } = useMutation({
+  const { handleAgentError } = useHandleAgentError();
+  const { mutate: sendEth, isPending: isSending, isError, data: sendResult } = useMutation({
     mutationFn: async ({ to, amount }: { to: string, amount: string }) => {
       if (!basic_eth) {
         throw new Error('basic_eth actor not initialized');
       }
-      return basic_eth.send_eth(to, decimalStringToEth(amount));
+      try {
+        const result = await basic_eth.send_eth(to, decimalStringToEth(amount));
+        // Do something with the result
+        return result;
+      } catch (e) {
+        handleAgentError(e);
+        console.error(e);
+      }
     }
   });
 
@@ -32,8 +41,6 @@ export default function SendButton() {
       amount: event.currentTarget.amount.value,
     });
   };
-
-  if (error) console.log(error);
 
   return <Dialog >
     <DialogTrigger asChild>

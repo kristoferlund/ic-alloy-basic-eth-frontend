@@ -1,9 +1,11 @@
 import { useActor } from "@/actor";
 import { Principal } from "@dfinity/principal";
 import { useQuery } from "@tanstack/react-query";
+import useHandleAgentError from "./useHandleAgentError";
 
 export default function useEthAddress(principal?: Principal) {
   const { actor: basic_eth } = useActor();
+  const { handleAgentError } = useHandleAgentError();
   return useQuery({
     queryKey: ['address', principal],
     queryFn: async () => {
@@ -17,7 +19,8 @@ export default function useEthAddress(principal?: Principal) {
         }
         return result.Ok;
       } catch (e) {
-        console.log(e)
+        handleAgentError(e);
+        console.error(e)
         throw new Error("Invalid address returned.")
       }
     },
