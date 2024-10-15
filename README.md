@@ -6,15 +6,11 @@ A React/Vite frontend for the multi user wallet example [ic-alloy-basic-eth](htt
 
 Pre-requisites:
 
-1. Deploy the `ic-alloy-basic-eth` smart contract canister
+1.Fork and build the `basic_eth` canister
 
 - Fork the [ic-alloy-basic-eth](https://github.com/kristoferlund/ic-alloy-basic-eth) repository.
-- Start `dfx` and deploy contract according to instructions in that repository
-
-2. Copy `.env` from `basic-eth` to the root of this repository
-
-- Rename the file `.env.basic-eth`
-- This information is required for the frontend to find the smart contract
+- Create the canister with `dfx canister create basic_eth`
+- Build the canister with `dfx build basic_eth`
 
 Run:
 
