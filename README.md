@@ -1,8 +1,13 @@
 # A multiuser Ethereum wallet built on ICP
 
-A React/Vite frontend for the multi user wallet example [ic-alloy-basic-eth](https://github.com/kristoferlund/ic-alloy-basic-eth). 
+A React/Vite frontend for the multi user wallet example [ic-alloy-basic-eth](https://github.com/kristoferlund/ic-alloy-basic-eth).
+
+> [!INFO]
+>
+> ## Live demo: <https://7vics-6yaaa-aaaai-ap7lq-cai.icp0.io>
 
 Features:
+
 - Login with Internet Identity to generate an Ethereum wallet address
 - Receive and send Ethereum to other users
 
@@ -16,7 +21,7 @@ The project requires the IC developer environment to be installed. Follow the in
 
 ### 1. Fork and build the `basic_eth` canister
 
-- The backend canister for this project is located in a separate repository. 
+- The backend canister for this project is located in a separate repository.
 - Fork the [ic-alloy-basic-eth](https://github.com/kristoferlund/ic-alloy-basic-eth) repository.
 
 ```bash
