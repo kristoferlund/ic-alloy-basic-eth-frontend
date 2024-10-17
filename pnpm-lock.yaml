@@ -38,11 +38,11 @@ dependencies:
     specifier: ^16.4.5
     version: 16.4.5
   ic-use-actor:
-    specifier: ^0.0.10
-    version: 0.0.10(@dfinity/agent@2.1.2)(@dfinity/candid@2.1.2)(react@18.3.1)
+    specifier: ^0.1.0
+    version: 0.1.0(@dfinity/agent@2.1.2)(@dfinity/candid@2.1.2)(react@18.3.1)
   ic-use-internet-identity:
-    specifier: ^0.0.11
-    version: 0.0.11(@dfinity/agent@2.1.2)(@dfinity/auth-client@2.1.2)(@dfinity/identity@2.1.2)(react@18.3.1)
+    specifier: ^0.1.0
+    version: 0.1.0(@dfinity/agent@2.1.2)(@dfinity/auth-client@2.1.2)(@dfinity/identity@2.1.2)(react@18.3.1)
   lucide-react:
     specifier: ^0.452.0
     version: 0.452.0(react@18.3.1)
@@ -2063,11 +2063,11 @@ packages:
     dependencies:
       function-bind: 1.1.2
 
-  /ic-use-actor@0.0.10(@dfinity/agent@2.1.2)(@dfinity/candid@2.1.2)(react@18.3.1):
-    resolution: {integrity: sha512-lmQiePwHYUSnCfRsEJL/gnTrHv0f8sPwfcgMxrn9PNnHMoOkuZX5+ijIJ7uuIEdrX0d1rTRbQrbUNZkXlZ0uqw==}
+  /ic-use-actor@0.1.0(@dfinity/agent@2.1.2)(@dfinity/candid@2.1.2)(react@18.3.1):
+    resolution: {integrity: sha512-Q2umozofJDYAZf8apfgKj432PRBpQ1BN03KNtO3uafAxTJJKDCwXj8gq3ijpMUV4IBgLB0plt5nJqqpxYKMqmA==}
     peerDependencies:
-      '@dfinity/agent': '>=1.2.1'
-      '@dfinity/candid': '>=1.2.1'
+      '@dfinity/agent': '>=2.1.2'
+      '@dfinity/candid': '>=2.1.2'
       react: '>=18.0.0'
     dependencies:
       '@dfinity/agent': 2.1.2(@dfinity/candid@2.1.2)(@dfinity/principal@2.1.2)
@@ -2075,12 +2075,12 @@ packages:
       react: 18.3.1
     dev: false
 
-  /ic-use-internet-identity@0.0.11(@dfinity/agent@2.1.2)(@dfinity/auth-client@2.1.2)(@dfinity/identity@2.1.2)(react@18.3.1):
-    resolution: {integrity: sha512-9uBEsF/39IAjriotS0sL51veix5wmbFi28ecuZ9V8rv52KVx4hHJc8VT0xIe89fzOSHfAIlcgAxSVAZzWWUF4A==}
+  /ic-use-internet-identity@0.1.0(@dfinity/agent@2.1.2)(@dfinity/auth-client@2.1.2)(@dfinity/identity@2.1.2)(react@18.3.1):
+    resolution: {integrity: sha512-6Lp9E1XtNwYU/ScMUVCrPbtpQxWT7nU4s7QzEyAQaPZ+o3Z78G6JY8mxwU5CUZJDion9zLUkE7KXHNQNFGlKPA==}
     peerDependencies:
-      '@dfinity/agent': '>=1.2.1'
-      '@dfinity/auth-client': '>=1.2.1'
-      '@dfinity/identity': '>=1.2.1'
+      '@dfinity/agent': '>=2.1.2'
+      '@dfinity/auth-client': '>=2.1.2'
+      '@dfinity/identity': '>=2.1.2'
       react: '>=18.0.0'
     dependencies:
       '@dfinity/agent': 2.1.2(@dfinity/candid@2.1.2)(@dfinity/principal@2.1.2)
