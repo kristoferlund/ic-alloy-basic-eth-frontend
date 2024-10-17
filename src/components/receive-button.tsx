@@ -33,12 +33,14 @@ export default function ReceiveButton() {
       <div className="font-semibold rounded-lg p-2 bg-muted text-xs">
         Send only SepoliaETH to this address, all other funds will be lost.
       </div>
-      {address && <> <div className="rounded-lg border p-5 bg-white">
+      {address && <> <div className="rounded-lg border p-5 bg-primary">
+
         <QRCode
           size={256}
-          style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+          style={{ height: "auto", maxWidth: "100%", width: "100%", color: "red" }}
           value={`ethereum:${address}`}
           viewBox={`0 0 256 256`}
+          bgColor="#00ffa6"
         />
       </div>
         <code className="relative text-center text-2xl rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono font-semibold hover:bg-muted-foreground cursor-pointer"
