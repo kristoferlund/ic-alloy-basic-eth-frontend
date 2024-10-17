@@ -1,20 +1,34 @@
-# ic-alloy-basic-eth-frontend
+# A multiuser Ethereum wallet built on ICP
 
-A React/Vite frontend for the multi user wallet example [ic-alloy-basic-eth](https://github.com/kristoferlund/ic-alloy-basic-eth).
+A React/Vite frontend for the multi user wallet example [ic-alloy-basic-eth](https://github.com/kristoferlund/ic-alloy-basic-eth). 
+
+Features:
+- Login with Internet Identity to generate an Ethereum wallet address
+- Receive and send Ethereum to other users
+
+![](./media/screenshot.png)
+
+## Prerequisites
+
+The project requires the IC developer environment to be installed. Follow the instructions at [internetcomputer.org](https://internetcomputer.org/docs/current/developer-docs/backend/rust/dev-env)
 
 ## Run locally
 
-Pre-requisites:
+### 1. Fork and build the `basic_eth` canister
 
-1.Fork and build the `basic_eth` canister
-
+- The backend canister for this project is located in a separate repository. 
 - Fork the [ic-alloy-basic-eth](https://github.com/kristoferlund/ic-alloy-basic-eth) repository.
-- Create the canister with `dfx canister create basic_eth`
-- Build the canister with `dfx build basic_eth`
-
-Run:
 
 ```bash
+cd ic-alloy-basic-eth
+dfx canister create basic_eth
+dfx build basic_eth
+```
+
+### 2. Build and deploy the frontend
+
+```bash
+cd ic-alloy-basic-eth-frontend
 dfx start --background
 dfx deploy
 ```
