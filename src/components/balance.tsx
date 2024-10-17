@@ -1,9 +1,11 @@
 import useEthBalance from "@/hooks/useEthBalance";
 import { Skeleton } from "./ui/skeleton";
 import { ethStringToDecimal } from "@/lib/eth";
+import useEthAddress from "@/hooks/useEthAddress";
 
 export function Balance() {
-  const { data: balance, isPending: isFetchingBalance, isError } = useEthBalance();
+  const { data: address } = useEthAddress();
+  const { data: balance, isPending: isFetchingBalance, isError } = useEthBalance(address);
 
   if (isFetchingBalance) {
     return <Skeleton className="w-full h-14" />
