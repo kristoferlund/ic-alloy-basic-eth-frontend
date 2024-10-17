@@ -48,7 +48,7 @@
 }
 
 main {
-  @apply bg-background h-screen pt-20 flex items-center justify-center;
+  @apply bg-background h-screen pt-20 flex flex-col items-center justify-center;
 }
 
 section {
@@ -58,3 +58,21 @@ section {
 h3 {
   @apply text-2xl font-semibold leading-none tracking-tight
 }
+
+.links {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.links img {
+    opacity: 0.5;
+}
+
+.links img:hover {
+    opacity: 1;
+}
+
