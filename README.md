@@ -2,7 +2,7 @@
 
 A React/Vite frontend for the multi user wallet example [ic-alloy-basic-eth](https://github.com/kristoferlund/ic-alloy-basic-eth).
 
-> [!INFO]
+> [!TIP]
 >
 > ## Live demo: <https://7vics-6yaaa-aaaai-ap7lq-cai.icp0.io>
 
