@@ -13,6 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useActor } from "@/actor";
 import { decimalStringToEth } from "@/lib/eth";
 import useHandleAgentError from "@/hooks/useHandleAgentError";
+import { queryClient } from "@/main";
 
 export default function SendButton() {
   const { isPending: isFetchingAddress } = useEthAddress();
@@ -25,7 +26,13 @@ export default function SendButton() {
       }
       try {
         const result = await basic_eth.send_eth(to, decimalStringToEth(amount));
-        // Do something with the result
+        // Refresh the balance in 5 seconds to give the Etherscan API time to catch up.
+        // A better way to update balace would of course be:
+        // 1. Parse response and check that transaction was successful
+        // 2. Update balance manually, no API calls required.
+        setTimeout(() => {
+          queryClient.invalidateQueries({ queryKey: ['balance'] });
+        }, 5000);
         return result;
       } catch (e) {
         handleAgentError(e);
